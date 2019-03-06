@@ -1,20 +1,36 @@
-
+[![Build Status](https://travis-ci.org/keets2012/microservice-integration.svg?branch=master)](https://travis-ci.org/keets2012/microservice-integration)
+[![codebeat badge](https://codebeat.co/badges/6ac5bf89-c645-4c84-9b6c-70a36f5134e9)](https://codebeat.co/projects/github-com-keets2012-microservice-integration-master)
+![](https://img.shields.io/badge/license-MIT-000000.svg)
 
 # 整合项目
-
-**consul的版本为0.8.5版本** [下载链接](https://releases.hashicorp.com/consul/?_ga=2.162761215.274382960.1520773282-289586393.1498458549)
-
-
 整合的项目包括网关、auth权限服务和backend服务。提供了一套微服务架构下，网关服务路由、鉴权和授权认证的项目案例。整个项目的架构图如下：
 
-![ms](http://ovcjgn2x0.bkt.clouddn.com/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E6%9D%83%E9%99%90%20%281%29.png "微服务架构权限")
+![ms](http://image.blueskykong.com/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E6%9D%83%E9%99%90%20%281%29.png "微服务架构权限")
 
 欲了解更多，见博客《[微服务架构中整合网关、权限服务](http://blueskykong.com/2017/12/10/integration/)》 
 
  **你的star是对我最好的鼓励^_^**
 
-## change log
+## change logs
+
+### 2019.02.28
+
+- 升级auth-server依赖至Spring Cloud Greenwich.RELEASE和 Spring Boot 2.1.3.RELEASE
+- 删除无用依赖
+- 删除资源服务器相关配置
+- 简化DataSource配置
+
+
+### 2019.2.22
+服务发布1.0.0.RELEASE版本，当前版本升级Spring Cloud的版本到`Greenwich.RELEASE`。本次功能优化如下：
+
+- 增加网关异常处理
+- 增加网关函数式降级接口
+- Hystrix降级头部信息获取
+
 ### 2018.9.25
+consul的版本为1.0以下的版本 [下载链接](https://releases.hashicorp.com/consul/?_ga=2.162761215.274382960.1520773282-289586393.1498458549)
+
 增加了Spring Cloud Gateway作为网关实现的模块，详见：[微服务网关Zuul迁移到Spring Cloud Gateway](http://blueskykong.com/2018/09/20/integration-enhanced/)
 
 新增功能：
@@ -43,8 +59,8 @@
 1. 安装一下，`mvn clean install -DskipTests`，包括三个模块。
 2. 登录端点
 
-![head](http://ovcjgn2x0.bkt.clouddn.com/login1-header.png "头部信息")
-![form](http://ovcjgn2x0.bkt.clouddn.com/loginform2.png "表单信息")
+![head](http://image.blueskykong.com/login1-header1.png "头部信息")
+![form](http://image.blueskykong.com/loginform3.png "表单信息")
 
 ```
 {
@@ -60,16 +76,16 @@
 ```
  
  3.刷新端点
- ![refresh](http://ovcjgn2x0.bkt.clouddn.com/refreshtoken.jpg "刷新端点")
+ ![refresh](http://image.blueskykong.com/refreshtoken1.jpg "刷新端点")
 
 返回结果与上面登录类似。
 
 4.登出端点
 
-![out](http://ovcjgn2x0.bkt.clouddn.com/logoutresponse.jpg "logout")
+![out](http://image.blueskykong.com/logoutresponse1.jpg "logout")
 
 5.backend后端接口
-![test](http://ovcjgn2x0.bkt.clouddn.com/demotest.jpg "demo test")
+![test](http://image.blueskykong.com/demotest1.jpg "demo test")
 
 上述请求到达backend被拒绝，因为auth服务使用的userId是随机生成，如果你要真是使用，请修改那部分user服务的实现。
 
@@ -88,7 +104,7 @@
 
 #### 订阅最新文章，欢迎关注我的公众号
 
-![微信公众号](http://ovci9bs39.bkt.clouddn.com/qrcode_for_gh_ca56415d4966_430.jpg)
+![微信公众号](http://image.blueskykong.com/wechat-public-code.jpg)
 
 
 

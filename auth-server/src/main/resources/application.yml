@@ -1,15 +1,9 @@
 spring:
   datasource:
-    hikari:
-      connection-test-query: SELECT 1
-      minimum-idle: 1
-      maximum-pool-size: 5
-      pool-name: dbcp1
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/auth_test?autoReconnect=true&useSSL=false
-    username: simu
-    password: pwd
-    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3316/auth?autoReconnect=true&useSSL=false
+    username: root
+    password: _123456_
 
 ############################# Redis config #############################
 cache:
@@ -31,8 +25,7 @@ redis:
   database: 0
   host:
     address: localhost
-    password: Superid123
-    port: 6378
+    port: 6379
   setup:
     flushdb: true
 

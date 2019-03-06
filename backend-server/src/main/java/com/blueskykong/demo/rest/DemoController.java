@@ -1,9 +1,14 @@
 package com.blueskykong.demo.rest;
 
 import com.blueskykong.demo.annotation.PreAuth;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by keets on 2017/12/6.
@@ -17,4 +22,11 @@ public class DemoController {
     public String test() {
         return "ok";
     }
+
+
+    @GetMapping(value = "/hello")
+    public String hello() {
+        return "hello, this is Backend demo!";
+    }
+
 }

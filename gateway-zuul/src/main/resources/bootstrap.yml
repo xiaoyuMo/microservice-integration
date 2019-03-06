@@ -1,22 +1,23 @@
 server:
-  port: 9092
-
-#management.security.enabled: false
+  port: 10101
 
 spring:
+  profiles: default
+  application:
+    name: gatewayserver
   cloud:
     consul:
       discovery:
         preferIpAddress: true
         enabled: true
         register: true
-        service-name: authdemo
+        service-name: api-getway
         health-check-interval: 10s
         health-check-timeout: 20s
         heartbeat:
           enabled: true
-        ip-address: localhost
-        port: ${server.port}
+        ip-address: ${HOST_ADDRESS:localhost}
+        port: ${SERVER_PORT:${server.port}}
         lifecycle:
           enabled: true
         scheme: http
@@ -30,10 +31,3 @@ spring:
         max-interval: 1000
       host: localhost
       port: 8500
-
----
-spring:
-  profiles: default
-  application:
-    name: authdemo
-
